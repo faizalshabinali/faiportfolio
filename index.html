@@ -43,12 +43,12 @@
 
     <div class="hero">
       <div class="content">
-        <h1>Beautiful Crafted Web Experience</h1>
-        <div class="meet">
+        <h1 class="stagger1">Beautiful Crafted Web Experience</h1>
+        <div class="meet stagger1">
           <span>👇</span>
           <p>Meet Faizal Ali</p>
         </div>
-        <svg class="scroll" width="40" height="77" viewBox="0 0 40 77">
+        <svg class="scroll stagger1" width="40" height="77" viewBox="0 0 40 77">
           <g id="scroll" transform="translate(-253 -787)">
             <g
               id="Rectangle_12"
@@ -62,6 +62,7 @@
               <rect x="2" y="2" width="36" height="73" rx="18" fill="none" />
             </g>
             <circle
+              class="circle"
               id="Ellipse_1"
               data-name="Ellipse 1"
               cx="11"
@@ -257,6 +258,87 @@
         <a href="#"><img src="./images/fretty.jpg" alt="Frestatic" /></a>
       </div>
     </section>
-    <a href="https://youtu.be/9iUJJHEIpls" target="_blank">Youtube Video</a>
+    <footer>
+      <div class="footer-bar">
+        <p>Design and Developed By <span> Faizal Ali</span></p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"
+      integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"
+      integrity="sha512-jNJOCd1PIjJoUa1XTDKaPdBLNUe4OJTrltKG+70O5ghYZ943nTRGIzjObwC2JtSm1fG7T06GbUApR2eirIU/jA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+      var tl = gsap.timeline();
+
+      tl.from('.content', {
+        y: '-30%',
+        opacity: 0,
+        duration: 2,
+        ease: Power4.easeOut,
+      });
+
+      tl.from(
+        '.stagger1',
+        {
+          y: '-50',
+          opacity: 0,
+          stagger: 0.3,
+          ease: Power4.easeOut,
+          duration: 2,
+        },
+        '-= 1.5'
+      );
+      tl.from(
+        '.hero-design',
+        {
+          opacity: 0,
+          y: 50,
+          ease: Power4.easeOut,
+          duration: 1,
+        },
+        '-=2'
+      );
+
+      gsap.from('.square-anim', {
+        stagger: 0.2,
+        scale: 0,
+        duration: 1,
+        ease: Back.easeOut.config(1.7),
+      });
+
+      gsap.from('.transition2', {
+        scrollTrigger: {
+          trigger: '.transition2',
+          stagger: 'top bottom',
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1.2,
+        stagger: 0.3,
+      });
+
+      gsap.from('.transition3', {
+        scrollTrigger: {
+          trigger: '.transition3',
+          stagger: 'top center',
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1.2,
+        stagger: 0.6,
+      });
+    </script>
   </body>
 </html>

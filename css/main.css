@@ -185,6 +185,28 @@ section {
   margin-bottom: 2em;
 }
 
+.footer-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  background: gray;
+  place-content: center;
+}
+
+.footer-bar p {
+  margin-top: 5px;
+  color: white;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.footer-bar span {
+  color: violet;
+  font-weight: 600;
+}
+
 @media only screen and (min-width: 800px) {
   .featured,
   .portfolio {
@@ -331,6 +353,34 @@ section {
   }
   .portfolio-container img {
     margin-left: 8em;
+  }
+}
+
+.circle {
+  animation: circleAnim 1s infinite alternate-reverse;
+}
+
+@-webkit-keyframes circleAnim {
+  from {
+    -webkit-transform: translate(262px, 798px);
+            transform: translate(262px, 798px);
+    z-index: 5;
+  }
+  to {
+    -webkit-transform: translate(262px, 830px);
+            transform: translate(262px, 830px);
+  }
+}
+
+@keyframes circleAnim {
+  from {
+    -webkit-transform: translate(262px, 798px);
+            transform: translate(262px, 798px);
+    z-index: 5;
+  }
+  to {
+    -webkit-transform: translate(262px, 830px);
+            transform: translate(262px, 830px);
   }
 }
 /*# sourceMappingURL=main.css.map */
